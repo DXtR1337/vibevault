@@ -1,0 +1,248 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+/* ============================================
+   CHILL & COZY DESIGN SYSTEM
+   Warm, paper-like, hygge aesthetic
+   ============================================ */
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-nunito), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-lora), ui-serif, Georgia, serif;
+  --font-mono: ui-monospace, monospace;
+
+  /* Cozy Color System */
+  --color-cozy-cream: #F5EFE6;
+  --color-cozy-paper: #FAF9F6;
+  --color-cozy-brown: #3C312B;
+  --color-cozy-coffee: #5C534E;
+  --color-cozy-light: #E8DFD5;
+  --color-accent-sage: #8F9E8B;
+  --color-accent-terracotta: #C98B70;
+  --color-accent-mustard: #D4A84B;
+
+  /* Sidebar colors */
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+
+  /* Chart colors */
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+
+  /* UI colors */
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+
+  /* Border radius */
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+}
+
+:root {
+  --radius: 0.75rem;
+  --background: #F2E8DC;
+  --foreground: #3C312B;
+  --card: #FBF7F2;
+  --card-foreground: #3C312B;
+  --popover: #FBF7F2;
+  --popover-foreground: #3C312B;
+  --primary: #8F9E8B;
+  --primary-foreground: #FAF9F6;
+  --secondary: #E6DCCE;
+  --secondary-foreground: #3C312B;
+  --muted: #E6DCCE;
+  --muted-foreground: #5C534E;
+  --accent: #C98B70;
+  --accent-foreground: #FAF9F6;
+  --destructive: #C75D5D;
+  --border: #DBCAB0;
+  --input: #E6DCCE;
+  --ring: #8F9E8B;
+  --chart-1: #8F9E8B;
+  --chart-2: #C98B70;
+  --chart-3: #D4A84B;
+  --chart-4: #A18F7F;
+  --chart-5: #7A9E8B;
+  --sidebar: #F2E8DC;
+  --sidebar-foreground: #3C312B;
+  --sidebar-primary: #8F9E8B;
+  --sidebar-primary-foreground: #FAF9F6;
+  --sidebar-accent: #E6DCCE;
+  --sidebar-accent-foreground: #3C312B;
+  --sidebar-border: #DBCAB0;
+  --sidebar-ring: #8F9E8B;
+}
+
+/* Dark Mode - Espresso theme */
+.dark {
+  --background: #2A241F;
+  --foreground: #E8DFD5;
+  --card: #352E28;
+  --card-foreground: #E8DFD5;
+  --popover: #352E28;
+  --popover-foreground: #E8DFD5;
+  --primary: #8F9E8B;
+  --primary-foreground: #2A241F;
+  --secondary: #3D3530;
+  --secondary-foreground: #E8DFD5;
+  --muted: #3D3530;
+  --muted-foreground: #A89F96;
+  --accent: #C98B70;
+  --accent-foreground: #2A241F;
+  --destructive: #C75D5D;
+  --border: #4A413A;
+  --input: #3D3530;
+  --ring: #8F9E8B;
+  --chart-1: #8F9E8B;
+  --chart-2: #C98B70;
+  --chart-3: #D4A84B;
+  --chart-4: #A18F7F;
+  --chart-5: #7A9E8B;
+  --sidebar: #2A241F;
+  --sidebar-foreground: #E8DFD5;
+  --sidebar-primary: #8F9E8B;
+  --sidebar-primary-foreground: #2A241F;
+  --sidebar-accent: #3D3530;
+  --sidebar-accent-foreground: #E8DFD5;
+  --sidebar-border: #4A413A;
+  --sidebar-ring: #8F9E8B;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-sans);
+    /* Premium Texture Overlay */
+    background-image: url('/bg-pattern.svg');
+    background-size: 300px 300px;
+    background-repeat: repeat;
+    background-attachment: fixed;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-serif);
+    font-weight: 600;
+  }
+}
+
+@layer components {
+
+  /* Cozy Panel - replaces glass-panel */
+  .cozy-panel {
+    @apply bg-cozy-paper rounded-2xl border border-cozy-light/50;
+    box-shadow: 0 10px 40px -15px rgba(92, 83, 78, 0.15);
+  }
+
+  /* Soft shadow utility */
+  .shadow-cozy {
+    box-shadow: 0 10px 30px -10px rgba(92, 83, 78, 0.2);
+  }
+
+  /* Legacy glass-panel (for compatibility) */
+  .glass-panel {
+    @apply bg-cozy-paper rounded-2xl border border-cozy-light/50;
+    box-shadow: 0 10px 40px -15px rgba(92, 83, 78, 0.15);
+  }
+
+  /* Cozy button variants */
+  /* Cozy button variants */
+  .btn-sage {
+    @apply bg-accent-sage text-cozy-paper font-medium px-4 py-2 rounded-xl transition-all;
+  }
+
+  .btn-sage:hover {
+    @apply bg-accent-sage/90;
+    box-shadow: 0 10px 30px -10px rgba(92, 83, 78, 0.2);
+  }
+
+  .btn-terracotta {
+    @apply bg-accent-terracotta text-cozy-paper font-medium px-4 py-2 rounded-xl transition-all;
+  }
+
+  .btn-terracotta:hover {
+    @apply bg-accent-terracotta/90;
+    box-shadow: 0 10px 30px -10px rgba(92, 83, 78, 0.2);
+  }
+
+  /* Tag pills */
+  .tag-sage {
+    @apply bg-accent-sage/20 text-accent-sage px-3 py-1 rounded-full text-sm font-medium;
+  }
+
+  .tag-terracotta {
+    @apply bg-accent-terracotta/20 text-accent-terracotta px-3 py-1 rounded-full text-sm font-medium;
+  }
+
+  .tag-mustard {
+    @apply bg-accent-mustard/20 text-accent-mustard px-3 py-1 rounded-full text-sm font-medium;
+  }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted-foreground);
+}
+
+/* Hide scrollbar utility */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
