@@ -10,7 +10,7 @@ const genAI = new GoogleGenerativeAI(apiKey || "");
 
 // Using Gemini 2.5 Flash - The only model accepting this audio format without 400 errors
 const model = genAI.getGenerativeModel({
-    model: "gemini-2.5-flash",
+    model: "gemini-3.0-flash",
 });
 
 const embeddingModel = genAI.getGenerativeModel({
